@@ -1,9 +1,12 @@
+using P1_Pooling;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Castle : MonoBehaviour
 {
-    public Projectile Projectile;
-
+    //public GameObject Projectile;
+    public ProjectilePool projectilePool;
+    
     private Transform _target;
     private int _enemyLayerMask;
     private float _currentCooldown;
@@ -41,7 +44,14 @@ public class Castle : MonoBehaviour
 
     void Attack()
     {
-        Instantiate(this.Projectile, this.transform.position, GetTargetDirection());
+        GameObject bullet = projectilePool.GetPooledProjectile();
+        if (bullet != null)
+        {
+            bullet.transform.position = this.transform.position;
+            bullet.transform.rotation = GetTargetDirection();
+        }
+        
+        //Instantiate(this.Projectile, this.transform.position, GetTargetDirection());
     }
 
     Quaternion GetTargetDirection()

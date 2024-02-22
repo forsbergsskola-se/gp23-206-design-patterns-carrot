@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private float _totalTime;
     void Start()
     {
-        FakeInitializeProjectile();
+        //FakeInitializeProjectile();
     }
 
     /// <summary>
@@ -26,17 +26,25 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this._totalTime += Time.deltaTime;
-        this.transform.Translate(Vector3.up * Time.deltaTime);
-        if (this._totalTime > 10f)
+        if (!this.gameObject.activeInHierarchy)
         {
-            Destroy(this.gameObject);
+            this._totalTime += Time.deltaTime;
+            this.transform.Translate(Vector3.up * Time.deltaTime);
+            if (this._totalTime > 10f)
+            {
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
+            } 
         }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("On Collision!");
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
+    
+    
 }

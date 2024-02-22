@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     private Castle _castle;
     
+    
     void Start()
     {
         this._castle = GameObject.FindWithTag("Player").GetComponent<Castle>();
