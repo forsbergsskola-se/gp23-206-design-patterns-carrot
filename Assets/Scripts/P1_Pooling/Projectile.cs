@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     private float _totalTime;
     void Start()
     {
-        //FakeInitializeProjectile();
+        FakeInitializeProjectile();
     }
 
     /// <summary>
@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     /// </summary>
     void FakeInitializeProjectile()
     {
-        Thread.Sleep(100);
+        //Thread.Sleep(100);
     }
     
     // Update is called once per frame
@@ -32,6 +32,7 @@ public class Projectile : MonoBehaviour
          {
              //Destroy(this.gameObject);
              this.gameObject.SetActive(false);
+             this._totalTime = 0;
          } 
     }
 
@@ -40,7 +41,6 @@ public class Projectile : MonoBehaviour
         Debug.Log("On Collision!");
         //Destroy(this.gameObject);
         this.gameObject.SetActive(false);
+        this._totalTime = 0;
     }
-    
-    
 }

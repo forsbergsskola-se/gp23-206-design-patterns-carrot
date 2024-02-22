@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 8413794588307679913, guid: 3e2d8f3089cbc437c9bed8d454efa6a7, type: 3}
-  poolSize: 15
+  poolSize: 10
 --- !u!1 &1633618191
 GameObject:
   m_ObjectHideFlags: 0

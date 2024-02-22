@@ -6,7 +6,7 @@ namespace P1_Pooling
     public class ProjectilePool  : MonoBehaviour
     {
         public GameObject projectile;
-        public int poolSize = 15;
+        public int poolSize;
 
         private List<GameObject> projectiles;
         

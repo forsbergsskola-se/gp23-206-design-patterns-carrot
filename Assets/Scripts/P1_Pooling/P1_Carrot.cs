@@ -9,6 +9,7 @@ namespace P1_Pooling
          *   
          *  To pool projectiles, we need to create a pool of inactive objects on start.
          *  CreateProjectilePool() 15 inactive
+         * 
          *  GetPooledProjectile() what, start at tower, heading away randomly
          *  ReturnProjectileToPoll() either after time limit or on collision enter
          *  
