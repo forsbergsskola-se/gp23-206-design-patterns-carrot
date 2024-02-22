@@ -45,11 +45,8 @@ public class Castle : MonoBehaviour
     void Attack()
     {
         GameObject bullet = projectilePool.GetPooledProjectile();
-        if (bullet != null)
-        {
-            bullet.transform.position = this.transform.position;
-            bullet.transform.rotation = GetTargetDirection();
-        }
+        bullet.transform.position = this.transform.position;
+        bullet.transform.rotation = GetTargetDirection();
         
         //Instantiate(this.Projectile, this.transform.position, GetTargetDirection());
     }

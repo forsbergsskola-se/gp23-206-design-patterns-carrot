@@ -20,7 +20,7 @@ namespace P1_Pooling
         {
             for (int i = 0; i < poolSize; i++)
             {
-                GameObject bullet = (projectile);
+                GameObject bullet = Instantiate(projectile);
                 bullet.SetActive(false);
                 projectiles.Add(bullet);
             }

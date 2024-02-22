@@ -26,17 +26,13 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!this.gameObject.activeInHierarchy)
-        {
-            this._totalTime += Time.deltaTime;
-            this.transform.Translate(Vector3.up * Time.deltaTime);
-            if (this._totalTime > 10f)
-            {
-                //Destroy(this.gameObject);
-                this.gameObject.SetActive(false);
-            } 
-        }
-        
+         this._totalTime += Time.deltaTime;
+         this.transform.Translate(Vector3.up * Time.deltaTime);
+         if (this._totalTime > 10f)
+         {
+             //Destroy(this.gameObject);
+             this.gameObject.SetActive(false);
+         } 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
