@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     private Castle _castle;
     
+    
     void Start()
     {
         this._castle = GameObject.FindWithTag("Player").GetComponent<Castle>();
@@ -47,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("OnCollision!");
+        Debug.Log("Enemy hit!");
         Destroy(this.gameObject);
     }
 }
